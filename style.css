@@ -1,4 +1,4 @@
-/*mobile first*/
+/*mobile first: 375px*/
 :root {
   --red: hsl(0, 78%, 62%);
   --cyan: hsl(180, 62%, 55%);
@@ -28,6 +28,7 @@ body {
 
 .main-container {
   padding: 2rem;
+  margin: 4rem 0;
 }
 
 .main-description h1 {
@@ -35,30 +36,34 @@ body {
   color: var(--very-dark-blue);
   font-size: 1.6rem;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .main-description h1 span {
-  font-weight: 400;
+  font-weight: 200;
   display: block;
 }
 
 .main-description p {
   color: var(--grayish-blue);
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 
 .section-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-areas:
+    "supervisor"
+    "team-builder"
+    "karma"
+    "calculator";
   gap: 1.5rem;
 }
 
 .section-card {
   background-color: #ffff;
   padding: 1.5rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--grayish-blue);
 }
 
@@ -80,25 +85,80 @@ body {
 
 #supervisor {
   border-top: 5px solid var(--cyan);
+  grid-area: supervisor;
 }
 
 #team-builder {
   border-top: 5px solid var(--red);
+  grid-area: team-builder;
 }
 
 #karma {
   border-top: 5px solid var(--orange);
+  grid-area: karma;
 }
 
 #calculator {
   border-top: 5px solid var(--blue);
+  grid-area: calculator;
 }
 
 .attribution {
   font-size: 11px;
   text-align: center;
+  color: var(--very-dark-blue);
 }
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/*tablet mode*/
+@media (min-width: 520px) {
+  .main-container {
+    margin: 4rem 2rem;
+  }
+
+  .main-description {
+    margin: 0 1.5rem;
+  }
+
+  .attribution {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+/*desktop mode*/
+@media (min-width: 720px) {
+  .main-container {
+    margin: 4rem;
+  }
+
+  .section-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "... team-builder ..."
+      "supervisor team-builder calculator"
+      "supervisor karma calculator"
+      "... karma ...";
+  }
+
+  .main-description {
+    margin: 0 6rem;
+  }
+
+  .main-description h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-description p {
+    font-size: 1.1rem;
+  }
+
+  .section-card h2 {
+    font-size: 1.3rem;
+  }
 }
