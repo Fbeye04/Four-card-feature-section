@@ -1,15 +1,3 @@
-/*mobile first: 375px*/
-:root {
-  --red: hsl(0, 78%, 62%);
-  --cyan: hsl(180, 62%, 55%);
-  --orange: hsl(34, 97%, 64%);
-  --blue: hsl(212, 86%, 64%);
-  --very-dark-blue: hsl(234, 12%, 34%);
-  --grayish-blue: hsl(229, 6%, 66%);
-  --very-light-gray: hsl(0, 0%, 98%);
-  font-size: 15px;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: var(--very-light-gray);
+  background-color: hsl(0, 0%, 98%);
   font-family: "Poppins", system-ui;
 }
 
@@ -30,55 +18,87 @@ body {
   padding: 2rem;
   margin: 4rem 0;
 }
+@media (min-width: 520px) {
+  .main-container {
+    margin: 4rem 2rem;
+  }
+}
+@media (min-width: 720px) {
+  .main-container {
+    margin: 4rem;
+  }
+}
 
 .main-description h1 {
   text-align: center;
-  color: var(--very-dark-blue);
+  color: hsl(234, 12%, 34%);
   font-size: 1.6rem;
   margin-bottom: 1rem;
   font-weight: 600;
 }
-
 .main-description h1 span {
   font-weight: 200;
   display: block;
 }
-
+@media (min-width: 720px) {
+  .main-description h1 {
+    font-size: 2.5rem;
+  }
+}
 .main-description p {
-  color: var(--grayish-blue);
+  color: hsl(229, 6%, 66%);
   text-align: center;
   margin-bottom: 5rem;
+}
+@media (min-width: 720px) {
+  .main-description p {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 520px) {
+  .main-description {
+    margin: 0 1.5rem;
+  }
+}
+@media (min-width: 720px) {
+  .main-description {
+    margin: 0 6rem;
+  }
 }
 
 .section-container {
   display: grid;
-  grid-template-areas:
-    "supervisor"
-    "team-builder"
-    "karma"
-    "calculator";
+  grid-template-areas: "supervisor" "team-builder" "karma" "calculator";
   gap: 1.5rem;
+}
+@media (min-width: 720px) {
+  .section-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "... team-builder ..." "supervisor team-builder calculator" "supervisor karma calculator" "... karma ...";
+  }
 }
 
 .section-card {
-  background-color: #ffff;
+  background-color: white;
   padding: 1.5rem;
   border-radius: 0.5rem;
-  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--grayish-blue);
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem hsl(229, 6%, 66%);
 }
-
 .section-card h2 {
   font-weight: 600;
-  color: var(--very-dark-blue);
+  color: hsl(234, 12%, 34%);
   margin-bottom: 0.5rem;
 }
-
+@media (min-width: 720px) {
+  .section-card h2 {
+    font-size: 1.3rem;
+  }
+}
 .section-card p {
-  color: var(--grayish-blue);
+  color: hsl(229, 6%, 66%);
   font-size: 0.9rem;
   margin-bottom: 2rem;
 }
-
 .section-card img {
   float: right;
 }
@@ -108,21 +128,7 @@ body {
   text-align: center;
   color: var(--very-dark-blue);
 }
-
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-
-/*tablet mode*/
 @media (min-width: 520px) {
-  .main-container {
-    margin: 4rem 2rem;
-  }
-
-  .main-description {
-    margin: 0 1.5rem;
-  }
-
   .attribution {
     position: fixed;
     bottom: 0;
@@ -130,35 +136,6 @@ body {
     right: 0;
   }
 }
-
-/*desktop mode*/
-@media (min-width: 720px) {
-  .main-container {
-    margin: 4rem;
-  }
-
-  .section-container {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-      "... team-builder ..."
-      "supervisor team-builder calculator"
-      "supervisor karma calculator"
-      "... karma ...";
-  }
-
-  .main-description {
-    margin: 0 6rem;
-  }
-
-  .main-description h1 {
-    font-size: 2.5rem;
-  }
-
-  .main-description p {
-    font-size: 1.1rem;
-  }
-
-  .section-card h2 {
-    font-size: 1.3rem;
-  }
-}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}/*# sourceMappingURL=main.css.map */

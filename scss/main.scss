@@ -1,0 +1,165 @@
+@import "./reset";
+@import "./variables";
+
+@function weight($weight-name) {
+  @return map-get($base-font-weights, $weight-name);
+}
+
+@mixin flexCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+body {
+  @include flexCenter;
+  min-height: 100vh;
+  background-color: $very-light-gray;
+  font-family: $base-font-families;
+}
+
+.main-container {
+  padding: 2rem;
+  margin: 4rem 0;
+
+  @include tablet {
+    margin: 4rem 2rem;
+  }
+
+  @include desktop {
+    margin: 4rem;
+  }
+}
+
+.main-description {
+  h1 {
+    text-align: center;
+    color: $very-dark-blue;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: weight(bold);
+
+    span {
+      font-weight: weight(light);
+      display: block;
+    }
+
+    @include desktop {
+      font-size: 2.5rem;
+    }
+  }
+
+  p {
+    color: $grayish-blue;
+    text-align: center;
+    margin-bottom: 5rem;
+
+    @include desktop {
+      font-size: 1.1rem;
+    }
+  }
+
+  @include tablet {
+    margin: 0 1.5rem;
+  }
+
+  @include desktop {
+    margin: 0 6rem;
+  }
+}
+
+.section-container {
+  display: grid;
+  grid-template-areas:
+    "supervisor"
+    "team-builder"
+    "karma"
+    "calculator";
+  gap: 1.5rem;
+
+  @include desktop {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "... team-builder ..."
+      "supervisor team-builder calculator"
+      "supervisor karma calculator"
+      "... karma ...";
+  }
+}
+
+.section-card {
+  background-color: #ffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem $grayish-blue;
+
+  h2 {
+    font-weight: weight(bold);
+    color: $very-dark-blue;
+    margin-bottom: 0.5rem;
+
+    @include desktop {
+      font-size: 1.3rem;
+    }
+  }
+
+  p {
+    color: $grayish-blue;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  img {
+    float: right;
+  }
+}
+
+#supervisor {
+  border-top: 5px solid var(--cyan);
+  grid-area: supervisor;
+}
+
+#team-builder {
+  border-top: 5px solid var(--red);
+  grid-area: team-builder;
+}
+
+#karma {
+  border-top: 5px solid var(--orange);
+  grid-area: karma;
+}
+
+#calculator {
+  border-top: 5px solid var(--blue);
+  grid-area: calculator;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--very-dark-blue);
+
+  @include tablet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
