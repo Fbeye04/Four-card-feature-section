@@ -152,14 +152,14 @@ body {
   text-align: center;
   color: $very-dark-blue;
 
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+
   @include tablet {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-  }
-
-  a {
-    color: hsl(228, 45%, 44%);
   }
 }

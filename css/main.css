@@ -128,6 +128,9 @@ body {
   text-align: center;
   color: hsl(234, 12%, 34%);
 }
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
 @media (min-width: 520px) {
   .attribution {
     position: fixed;
@@ -135,7 +138,4 @@ body {
     left: 0;
     right: 0;
   }
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
 }/*# sourceMappingURL=main.css.map */
