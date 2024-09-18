@@ -128,22 +128,22 @@ body {
 }
 
 #supervisor {
-  border-top: 5px solid $cyan;
+  border-top: 5px solid $custom-cyan;
   grid-area: supervisor;
 }
 
 #team-builder {
-  border-top: 5px solid $red;
+  border-top: 5px solid $custom-red;
   grid-area: team-builder;
 }
 
 #karma {
-  border-top: 5px solid $orange;
+  border-top: 5px solid $custom-orange;
   grid-area: karma;
 }
 
 #calculator {
-  border-top: 5px solid $blue;
+  border-top: 5px solid $custom-blue;
   grid-area: calculator;
 }
 
