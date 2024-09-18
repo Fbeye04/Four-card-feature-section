@@ -128,29 +128,29 @@ body {
 }
 
 #supervisor {
-  border-top: 5px solid var(--cyan);
+  border-top: 5px solid $cyan;
   grid-area: supervisor;
 }
 
 #team-builder {
-  border-top: 5px solid var(--red);
+  border-top: 5px solid $red;
   grid-area: team-builder;
 }
 
 #karma {
-  border-top: 5px solid var(--orange);
+  border-top: 5px solid $orange;
   grid-area: karma;
 }
 
 #calculator {
-  border-top: 5px solid var(--blue);
+  border-top: 5px solid $blue;
   grid-area: calculator;
 }
 
 .attribution {
   font-size: 11px;
   text-align: center;
-  color: var(--very-dark-blue);
+  color: $very-dark-blue;
 
   @include tablet {
     position: fixed;

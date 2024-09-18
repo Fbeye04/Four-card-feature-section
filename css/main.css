@@ -104,29 +104,29 @@ body {
 }
 
 #supervisor {
-  border-top: 5px solid var(--cyan);
+  border-top: 5px solid hsl(180, 62%, 55%);
   grid-area: supervisor;
 }
 
 #team-builder {
-  border-top: 5px solid var(--red);
+  border-top: 5px solid hsl(0, 78%, 62%);
   grid-area: team-builder;
 }
 
 #karma {
-  border-top: 5px solid var(--orange);
+  border-top: 5px solid hsl(34, 97%, 64%);
   grid-area: karma;
 }
 
 #calculator {
-  border-top: 5px solid var(--blue);
+  border-top: 5px solid hsl(212, 86%, 64%);
   grid-area: calculator;
 }
 
 .attribution {
   font-size: 11px;
   text-align: center;
-  color: var(--very-dark-blue);
+  color: hsl(234, 12%, 34%);
 }
 @media (min-width: 520px) {
   .attribution {
